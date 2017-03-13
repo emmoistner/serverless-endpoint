@@ -1,6 +1,6 @@
 {
   "name": "serverless-endpoint",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utilities designed to help manage api-gateway like event abstraction Edit",
   "main": "index.js",
   "scripts": {
