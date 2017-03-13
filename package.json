@@ -1,0 +1,38 @@
+{
+  "name": "serverless-endpoint",
+  "version": "0.0.1",
+  "description": "Utilities designed to help manage api-gateway like event abstraction Edit",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmoistner/serverless-endpoint.git"
+  },
+  "keywords": [
+    "Serverless",
+    "Amazon Web Services",
+    "AWS",
+    "Lambda",
+    "API Gateway"
+  ],
+  "author": "Ethan Moistner <emmoistner@gmail.com> (emmoistner@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emmoistner/serverless-endpoint/issues"
+  },
+  "homepage": "https://github.com/emmoistner/serverless-endpoint#readme",
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "jest": "^19.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "automock": true
+  }
+}
