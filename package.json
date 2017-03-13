@@ -1,10 +1,10 @@
 {
   "name": "serverless-endpoint",
-  "version": "0.0.2",
-  "description": "Utilities designed to help manage api-gateway like event abstraction Edit",
+  "version": "0.0.3",
+  "description": "Dependency-less express like wrapper for serverless functions.",
   "main": "index.js",
   "scripts": {
-     "test": "node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
