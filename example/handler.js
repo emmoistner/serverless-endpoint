@@ -24,7 +24,7 @@ const event = Object.assign({}, eventObject);
 const context = {
   succeed: params => console.log('SUCCESS', params),
   fail: error => console.log('FAILURE', error),
-  awsId: createFakeUUID()
+  awsRequestId: createFakeUUID()
 };
 
 // AWS Api Gateway Event
