@@ -1,7 +1,7 @@
 # serverless-endpoint
 > Dependencyless express like wrapper for serverless functions.
 
-[![Build Status](https://travis-ci.org/emmoistner/serverless-endpoint.svg?branch=master)](https://travis-ci.org/emmoistner/serverless-endpoint)
+[![Build Status](https://travis-ci.org/emmoistner/serverless-endpoint.svg?branch=master)](https://travis-ci.org/emmoistner/serverless-endpoint) [![Coverage Status](https://coveralls.io/repos/github/emmoistner/serverless-endpoint/badge.svg?branch=master)](https://coveralls.io/github/emmoistner/serverless-endpoint?branch=master)
 
 ## Support
 ✔️️AWS Api Gateway |

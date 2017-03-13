@@ -4,7 +4,7 @@
   "description": "Utilities designed to help manage api-gateway like event abstraction Edit",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+     "test": "node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/emmoistner/serverless-endpoint#readme",
   "devDependencies": {
+    "coveralls": "^2.12.0",
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
