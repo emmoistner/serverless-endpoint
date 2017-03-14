@@ -1,6 +1,6 @@
 {
   "name": "serverless-endpoint",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Dependency-less express like wrapper for serverless functions.",
   "main": "index.js",
   "scripts": {
