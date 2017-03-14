@@ -1,7 +1,7 @@
 # serverless-endpoint
 > Dependency-less express like wrapper for serverless functions.
 
-[![Build Status](https://travis-ci.org/emmoistner/serverless-endpoint.svg?branch=master)](https://travis-ci.org/emmoistner/serverless-endpoint) [![Coverage Status](https://coveralls.io/repos/github/emmoistner/serverless-endpoint/badge.svg?branch=master)](https://coveralls.io/github/emmoistner/serverless-endpoint?branch=master)
+[![Build Status](https://travis-ci.org/emmoistner/serverless-endpoint.svg?branch=master)](https://travis-ci.org/emmoistner/serverless-endpoint) [![npm version](https://badge.fury.io/js/serverless-endpoint.svg)](https://badge.fury.io/js/serverless-endpoint) [![Coverage Status](https://coveralls.io/repos/github/emmoistner/serverless-endpoint/badge.svg?branch=master)](https://coveralls.io/github/emmoistner/serverless-endpoint?branch=master)
 
 ## Support
 ✔️️ AWS Api Gateway |
@@ -9,12 +9,16 @@
 ❌ Azure functions |
 ❌ IBM OpenWhisk
 
+## Install
+```bash
+npm install --save serverless-endpoint
+```
 ## usage
 **Basic Example**
 ```js
 // handler
 
-const endpoint = require('serverless-endpoint').endpoint;
+const endpoint = require('serverless-endpoint');
 
 function getHelloWorld(req, res) {
 
@@ -29,7 +33,7 @@ module.exports.handler = endpoint(getHelloWorld)
 
 // handler
 
-const endpoint = require('serverless-endpoint').endpoint;
+const endpoint = require('serverless-endpoint');
 
 function getHelloWorld(req, res) {
 
@@ -45,7 +49,7 @@ module.exports.handler = endpoint(getHelloWorld)
 
 // handler
 
-const endpoint = require('serverless-endpoint').endpoint;
+const endpoint = require('serverless-endpoint');
 
 function getHelloWorld(req, res) {
 
@@ -63,7 +67,7 @@ module.exports.handler = endpoint(getHelloWorld)
 
 // handler
 
-const endpoint = require('serverless-endpoint').endpoint;
+const endpoint = require('serverless-endpoint');
 
 function getHelloWorld(req, res) {
 
