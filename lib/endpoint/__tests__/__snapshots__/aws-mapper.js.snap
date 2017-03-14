@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mappers.aws-mapper.js convertEventToRequest should apply sensible defaults for empty event object 1`] = `
+Object {
+  "apiId": undefined,
+  "body": Object {},
+  "headers": Object {},
+  "id": undefined,
+  "identity": Object {},
+  "method": undefined,
+  "og": Object {
+    "context": undefined,
+    "event": Object {},
+  },
+  "params": Object {},
+  "provider": "aws",
+  "query": Object {},
+  "resource": undefined,
+  "stage": undefined,
+}
+`;
+
 exports[`mappers.aws-mapper.js convertEventToRequest should map event to an object res can consume 1`] = `
 Object {
   "apiId": "xxxxxxxxxx",
@@ -99,7 +119,7 @@ Object {
   "params": Object {
     "id": "1",
   },
-  "provider": "AWS",
+  "provider": "aws",
   "query": Object {},
   "resource": "/{proxy+}",
   "stage": "prod",
