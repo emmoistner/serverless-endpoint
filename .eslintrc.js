@@ -25,6 +25,13 @@ module.exports = {
       'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
       'import/no-unresolved': 'error',
       'prefer-rest-params': 'off',
-      'strict': [ 'error', 'global' ]
+      'strict': [ 'error', 'global' ],
+      'keyword-spacing': ['error', {
+        before: true,
+        after: true,
+        overrides: {
+          catch: { after: false }
+        }
+      }],
     }
 }

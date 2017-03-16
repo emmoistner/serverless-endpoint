@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mappers.aws-mapper.js convertBody should handle stringified json 1`] = `
+Object {
+  "name": "Dave",
+}
+`;
+
 exports[`mappers.aws-mapper.js convertEventToRequest should apply sensible defaults for empty event object 1`] = `
 Object {
   "apiId": undefined,
