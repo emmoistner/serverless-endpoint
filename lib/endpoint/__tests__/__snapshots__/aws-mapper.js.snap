@@ -9,6 +9,7 @@ Object {
 exports[`mappers.aws-mapper.js convertEventToRequest should apply sensible defaults for empty event object 1`] = `
 Object {
   "apiId": undefined,
+  "authorizer": Object {},
   "body": Object {},
   "headers": Object {},
   "id": undefined,
@@ -29,6 +30,7 @@ Object {
 exports[`mappers.aws-mapper.js convertEventToRequest should map event to an object res can consume 1`] = `
 Object {
   "apiId": "xxxxxxxxxx",
+  "authorizer": Object {},
   "body": Object {
     "name": "Ethan",
   },

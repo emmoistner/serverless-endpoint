@@ -96,6 +96,7 @@ module.exports.handler = endpoint(getHelloWorld)
 | apiId | <code>string</code> | `AWS Only` string apiId: AWS.event.requestContext.apiId |
 | stage | <code>string</code> | `AWS Only` api stage from url - /dev/resource = 'dev' |
 | identity | <code>Object</code> | `AWS Only` identity of user: event.requestContext.identity |
+| authorizer | <code>Object</code> | `AWS Only` object returned from custom authorizer: event.requestContext.authorizer |
 | header | <code>function</code> | value for the header key - header(headerKey) |
 | get | <code>function</code> | value for the header key - get(headerKey)
 | getOriginalRequest | <code>function</code> | `AWS Only`returns the arguments provided to the http function |
