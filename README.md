@@ -77,6 +77,23 @@ function getHelloWorld(req, res) {
 module.exports.handler = endpoint(getHelloWorld)
 ```
 
+**Cors Response Example**
+```js
+// endpoint /hello
+
+// handler
+
+const endpoint = require('serverless-endpoint');
+
+function getHelloWorld(req, res) {
+
+  res.header({ "Access-Control-Allow-Origin" : "*" })
+    .send(200, { message: `Hello World!` })
+}
+
+module.exports.handler = endpoint(getHelloWorld)
+```
+
 # Api
 
 ## req : <code>Object</code>
@@ -107,15 +124,21 @@ module.exports.handler = endpoint(getHelloWorld)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| send | <code>[send](#send)</code> | Sends the HTTP response. |
-| error | <code>error</code> | `AWS Only` Returns an error to api gateway |
+| send | <code>[function](#res.send)</code> | Sends the HTTP response. |
+| error | <code>function</code> | `AWS Only` Returns an error to api gateway. |
+| header | <code>function</code> | Set header `key` to `value`, or pass an object of header fields. |
+| set | <code>function</code> | Alias for `header` |
+| getHeader | <code>function</code> | Get value for header `key`. |
+| get | <code>function</code> | Alias for `getHeader` |
+
+
 
 ## res.send(statusCode, body)
 Formats statusCode, body to be sent as a HTTP response back to
 api consumer (Api Gateway, Google Endpoint).
   The body parameter can be a a String, an object, or an Array.
 
-**Kind**: global function
+**Kind**: public function
 **Returns**: <code>Object</code> - response HTTP response object formatted for Api Gateway.
 
 | Param | Type | Description |
@@ -126,9 +149,46 @@ api consumer (Api Gateway, Google Endpoint).
 ## res.error(error) `AWS Only`
 returns error to api gateway
 
-**Kind**: global function
+**Kind**: public function
 **Returns**: <code>Object</code> - Error to be handed to ApiGateway
 
 | Param | Type | Description |
 | --- | --- | --- |
 | err | <code>Object</code> | Caught javascript error |
+
+## res.headers(key [, value])
+Set header `key` to `value`, or pass
+an object of header fields.
+**Examples:**
+
+```js
+res.header('Foo', ['bar', 'bot']);
+res.header('Content-Type', 'application/json');
+res.header({ 'Content-Type': 'text/html', 'X-API-Key': 'buildkey' });
+
+// chaining
+res.header({ 'Content-Type': 'text/html' })
+  .send(200, html);
+```
+
+Aliased as `res.set()`.
+
+
+**Kind**: public function
+**Returns**: <code>Res</code> - Returns the same `Res` for chaining
+
+## res.getHeader(key)
+Get value for header `key`.
+**Examples:**
+
+```js
+res.header('Foo', 'bar');
+res.getHeader('Foo');
+// Returns 'bar'
+```
+
+Aliased as `res.get()`.
+
+
+**Kind**: public function
+**Returns**: <code>string</code> - Returns value for header `key`.
