@@ -17,7 +17,7 @@ function handler(req, res) {
   res.send(200, { message: req.body.name });
 }
 
-const endpointHandler = endpoint(handler);
+const endpointHandler = endpoint(handler, { headers: { 'Access-Control-Allow-Origin': '*' } });
 
 const event = Object.assign({}, eventObject);
 

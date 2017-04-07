@@ -94,10 +94,55 @@ function getHelloWorld(req, res) {
 module.exports.handler = endpoint(getHelloWorld)
 ```
 
+**Cors through Config Response Example**
+```js
+const endpoint = require('serverless-endpoint');
+
+// Config Options
+const opts = {
+  headers: { "Access-Control-Allow-Origin": "*" }
+}
+
+// endpoint /hello
+function getHelloWorld(req, res) {
+
+  res.send(200, { message: `Hello World!` })
+}
+
+// endpoint /ping
+function ping(req, res) {
+
+  res.header({ "Additional-Header": "example" })
+    .send(200, { message: `Ping!` })
+  // returns  
+  // {
+  //   statusCode: 200,
+  //   body: message,
+  //   headers: {
+  //     "Access-Control-Allow-Origin": "*",
+  //     "Additional-Header": "example"
+  //   }
+  // }
+}
+
+module.exports.getHelloWorld = endpoint(getHelloWorld, opts)
+module.exports.ping = endpoint(ping, opts)
+```
+
 # Api
 
+## endpoint(cloudFunctionHandler, options)
+Higher Order Function that abstracts the different cloud function parameters into a single express-like api. Is configurable by options parameter.
+
+#### options
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| headers | <code>Object</code> | default headers to be sent with `res.send` |
+
+
 ## req : <code>Object</code>
-**Kind**: global typedef
 **Properties**
 
 | Name | Type | Description |
@@ -107,7 +152,7 @@ module.exports.handler = endpoint(getHelloWorld)
 | path | <code>string</code> | A cleaned url string |
 | resource | <code>string</code> | base resource of url |
 | headers | <code>Object</code> | header object containing all header information |
-| params | <code>Object</code> | parameters object from url path - /resource/{id} = { id: <value> } |
+| params | <code>Object</code> | parameters object from url path - `/resource/{id}` = `{ id: <value> }` |
 | query | <code>Object</code> | query parameters object from url - /resource?sort=asc = { sort: 'asc' } |
 | id | <code>string</code> | `AWS Only` string id of the request: AWS.event.requestContext.requestId |
 | apiId | <code>string</code> | `AWS Only` string apiId: AWS.event.requestContext.apiId |
@@ -119,7 +164,6 @@ module.exports.handler = endpoint(getHelloWorld)
 | getOriginalRequest | <code>function</code> | `AWS Only`returns the arguments provided to the http function |
 
 ## res : <code>Object</code>
-**Kind**: global typedef
 **Properties**
 
 | Name | Type | Description |

@@ -4,8 +4,4 @@ exports[`mapper.index.js Azure Http trigger should throw 1`] = `"Azure is curren
 
 exports[`mapper.index.js Unexpected arguments shapes should throw 1`] = `"Unexpected trigger event. Was the handler called by ApiGateway?"`;
 
-exports[`mapper.index.js Unexpected arguments shapes should throw 2`] = `[Function]`;
-
 exports[`mapper.index.js no arguments should throw EndpointError 1`] = `"Unexpected trigger event. Was the handler called by ApiGateway?"`;
-
-exports[`mapper.index.js no arguments should throw EndpointError 2`] = `[Function]`;
